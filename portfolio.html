@@ -3,19 +3,26 @@
 	<head>
 	<link rel="shortcut icon" href="img/logodm.png">
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- Site Title -->
-		<title>David Moore</title>
+        <!-- Mobile Specific Meta -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Favicon-->
+        <link rel="shortcut icon" href="img/logodm.png">
+        <!-- Author Meta -->
+        <meta name="author" content="colorlib">
+        <!-- Meta Description -->
+        <meta name="description" content="">
+        <!-- Meta Keyword -->
+        <meta name="keywords" content="">
+        <!-- meta character set -->
+        <meta charset="UTF-8">
+        <!-- Site Title -->
+        <title>David Moore</title>
 
 		 <!-- load stylesheets -->
 	    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">  
 	    <!-- Google web font "Open Sans" -->
 	    <link rel="stylesheet" href="font-awesome-4.5.0/css/font-awesome.min.css">                
 	    <!-- Font Awesome -->
-	    <link rel="stylesheet" href="css/bootstrap.min.css">                                      
-	    <!-- Bootstrap style -->
 	    <!-- Hero slider style (https://codyhouse.co/gem/hero-slider/) -->
 	    <link rel="stylesheet" href="css/magnific-popup.css">                                 
 	    <!-- Magnific popup style (http://dimsemenov.com/plugins/magnific-popup/) -->
@@ -71,7 +78,7 @@
            <section class="portfolio-area section-big" id="portfolio">
  
 		                    <div class="title text-center">
-		                        <h1 class="mb-10">Featured Projects</h1>
+		                        <h1 class="mb-10">Feature Projects</h1>
 		                    </div> 
 
 		                    <div class="text-center">
@@ -383,9 +390,9 @@
                     
                   <li class="selected">                    
                     <div class="cd-full-width">
-                        <div class="container-fluid js-tm-page-content" data-page-no="1" data-page-type="gallery">
+                        <div class="container-fluid js-tm-page-content" data-page-no="2" data-page-type="gallery">
                             <div class="tm-img-gallery-container">
-                                <div class="tm-img-gallery gallery-one">
+                                <div class="tm-img-gallery gallery-two">
                                 <!-- Gallery One pop up connected with JS code below -->                                    
 
 
@@ -476,9 +483,7 @@
 
 
         <!-- load JS files -->
-        <script src="js/jquery-1.11.3.min.js"></script>         <!-- jQuery (https://jquery.com/download/) -->
-        <script src="https://www.atlasestateagents.co.uk/javascript/tether.min.js"></script> <!-- Tether for Bootstrap (http://stackoverflow.com/questions/34567939/how-to-fix-the-error-error-bootstrap-tooltips-require-tether-http-github-h) --> 
-        <script src="js/bootstrap.min.js"></script>             <!-- Bootstrap js (v4-alpha.getbootstrap.com/) -->
+      
         <script src="js/hero-slider-main.js"></script>          <!-- Hero slider (https://codyhouse.co/gem/hero-slider/) -->
         <script src="js/jquery.magnific-popup.min.js"></script> <!-- Magnific popup (http://dimsemenov.com/plugins/magnific-popup/) -->
         
@@ -550,74 +555,35 @@
                     gallery:{enabled:true}                
                 });
 
-                /* Collapse menu after click 
-                -----------------------------------------*/
-                $('#tmNavbar a').click(function(){
-                    $('#tmNavbar').collapse('hide');
 
-                    adjustHeightOfPage($(this).data("no")); // Adjust page height       
-                });
-
-                /* Browser resized 
-                -----------------------------------------*/
-                $( window ).resize(function() {
-                    var currentPageNo = $(".cd-hero-slider li.selected .js-tm-page-content").data("page-no");
-                    
-                    // wait 3 seconds
-                    setTimeout(function() {
-                        adjustHeightOfPage( currentPageNo );
-                    }, 1000);
-                    
-                });
-        
                 // Remove preloader (https://ihatetomatoes.net/create-custom-preloading-screen/)
                 $('body').addClass('loaded');
                            
             });
 
-            /* Google map
-            ------------------------------------------------*/
-            var map = '';
-            var center;
 
-            function initialize() {
-                var mapOptions = {
-                    zoom: 14,
-                    center: new google.maps.LatLng(37.769725, -122.462154),
-                    scrollwheel: false
-                };
-            
-                map = new google.maps.Map(document.getElementById('google-map'),  mapOptions);
-
-                google.maps.event.addDomListener(map, 'idle', function() {
-                  calculateCenter();
-                });
-            
-                google.maps.event.addDomListener(window, 'resize', function() {
-                  map.setCenter(center);
-                });
-            }
-
-            function calculateCenter() {
-                center = map.getCenter();
-            }
-
-            function loadGoogleMap(){
-                var script = document.createElement('script');
-                script.type = 'text/javascript';
-                script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&' + 'callback=initialize';
-                document.body.appendChild(script);
-            }
-        
-            // DOM is ready
-            $(function() {                
-                loadGoogleMap(); // Google Map
-            });
 
         </script>  
 
 
-
+            <script src="js/vendor/jquery-2.2.4.min.js"></script>
+            <script src="js/popper.min.js"></script>
+            <script src="js/vendor/bootstrap.min.js"></script>          
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>         
+            <script src="js/easing.min.js"></script>            
+            <script src="js/hoverIntent.js"></script>
+            <script src="js/superfish.min.js"></script> 
+            <script src="js/jquery.ajaxchimp.min.js"></script>
+            <script src="js/jquery.magnific-popup.min.js"></script> 
+            <script src="js/jquery.tabs.min.js"></script>                       
+            <script src="js/jquery.nice-select.min.js"></script>    
+            <script src="js/isotope.pkgd.min.js"></script>          
+            <script src="js/waypoints.min.js"></script>
+            <script src="js/jquery.counterup.min.js"></script>
+            <script src="js/simple-skillbar.js"></script>                           
+            <script src="js/owl.carousel.min.js"></script>                          
+            <script src="js/mail-script.js"></script>   
+            <script src="js/main.js"></script>  
 
 
 
